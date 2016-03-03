@@ -251,11 +251,15 @@ function show_list_price(){
 	}
 	
 }
+
+//validator.js
 /*isEmail*/
 function isEmail(s){
 	var pattern= /^[A-Za-z0-9](([_\.\+\-]*[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]*[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/;
 	return pattern.test(s)
 };
+
+
 /*head_cookie*/
 is_cookie("currency","USD",3600*24*30);
 var is_login=getCookie("userInfo[email]");
