@@ -46,7 +46,8 @@ define(['lang'], function(lang){
           expect(lang.type(value)).toEqual(key);
         });
       });
-    })
-  })
+    });
+  });
+
 
 });

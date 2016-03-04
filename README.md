@@ -1,4 +1,8 @@
-# util
+## util
+
+
+travis-ci中测试环境是PhantomJS
+
 前端工具函数
 
 A. cookie处理相关
