@@ -1,5 +1,6 @@
 ## util
 
+[![Build Status](https://travis-ci.org/lt-fed/util.svg?branch=master)](https://travis-ci.org/lt-fed/util)
 
 travis-ci中测试环境是PhantomJS
 
