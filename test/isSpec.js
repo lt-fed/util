@@ -37,13 +37,34 @@ define(['is'], function (is) {
         });
       });
       describe('#isFunction', function () {
-
+        it('should return what is is', function () {
+          expect(is.isFunction(function(){})).toEqual(true);
+          expect(is.isFunction(new Function('a', 'return a'))).toEqual(true);
+          expect(is.isFunction(document.getElementById)).toEqual(true);
+          expect(is.isFunction(undefined)).toEqual(false);
+        })
       });
+
+      describe('#isDOMnode', function () {
+        it('should return if it\'s a DOM node', function(){
+          var node = document.createElement('a');
+          expect(is.isDOMnode(node)).toEqual(true);
+          expect(is.isDOMnode({})).toEqual(false);
+        });
+      })
       describe('#isString', function () {
+        it('should return if it is string', function () {
+          expect(is.isString('123')).toEqual(true);
+          expect(is.isString(123)).toEqual(false);
+          expect(is.isString(String('abc'))).toEqual(true);
+        })
 
       });
       describe('#isNull', function () {
-
+        it('should return if it is really null', function () {
+          expect(is.isNull(null)).toEqual(true);
+          expect(is.isNull(undefined)).toEqual(false);
+        })
       });
     });
 
@@ -57,7 +78,9 @@ define(['is'], function (is) {
         expect(is.email('测试')).toEqual(false);
       });
       it('#phoneNumber' + pattern, function () {
-
+        expect(is.phoneNumber("123324435")).toEqual(true);
+        expect(is.phoneNumber(123332334)).toEqual(true);
+        expect(is.phoneNumber("a2134")).toEqual(false);
       });
       it('#zipcode' + pattern, function () {
 

@@ -49,5 +49,25 @@ define(['lang'], function(lang){
     });
   });
 
-
+  describe('Module lang', function(){
+    describe('#mergeSafe', function(){
+      it('should act as it is', function () {
+        var obj1 = {
+          a:1
+        };
+        var obj2 = {
+          b:2
+        };
+        expect(lang.mergeSafe(obj1, obj2)).toEqual({
+          a:1,
+          b:2
+        });
+      });
+      it('should not overwrite property', function () {
+        var obj1 = {a:1};
+        var obj2 = {a: 2, b: 3};
+        expect(lang.mergeSafe(obj1, obj2)).toEqual({a:1, b:3});
+      })
+    });
+  });
 });

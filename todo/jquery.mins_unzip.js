@@ -80,7 +80,7 @@ function price_replace(id,price,key){
 	return html ;
 }
 function all_price_replace(goods_price,id){
-	var html = new Array();
+	var html =[];
 	if(typeof(goods_price) != 'undefined'){
 		if(typeof(goods_price['current_price']) != 'undefined'){
 			html.push(price_replace(id,goods_price['current_price'],'current_price'));
